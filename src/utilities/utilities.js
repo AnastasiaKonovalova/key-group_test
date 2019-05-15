@@ -16,5 +16,8 @@ export const dataIncrease = (startArray, step) => {
   return startArray.map(int => int + getRandomIntegerInDiapason(int / 4, int / 2) + step);
 };
 export const arrayCut = (array, startOffset, endOffset) => {
-  return array.map((item, index, arr) => (index < startOffset || index >= arr.length - endOffset ? null : item));
+  return array.map((item, index, arr) => {
+    const shouldElementBeCut = index < startOffset || index >= arr.length - endOffset;
+    return shouldElementBeCut ? null : item;
+  });
 };
