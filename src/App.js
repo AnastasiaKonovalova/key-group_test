@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Line } from 'react-chartjs-2';
 import './App.css';
+
+import { data, options } from './chartConfig/chartConfig';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <h1>Key-Group test chart</h1>
       </header>
+      <div className='chart__container'>
+        <Line data={data} options={options} />
+      </div>
     </div>
   );
 }
